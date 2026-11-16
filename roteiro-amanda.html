@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Caçandoca · Roteiro da Amanda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1a1a18;--creme:#eee9e0;--creme2:#e8e2d6;--paper:#f2ede4;
+  --ouro:#b89a6a;--ouro-l:#d4b98a;--ouro-d:#96784a;
+  --surface:#252624;--surface2:#1e1e1c;--red:#9e1b1f;
+  --muted:rgba(238,233,224,.55);--div:rgba(184,154,106,.18);
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--surface2);color:var(--creme);font-family:var(--sans);font-weight:300;overflow-x:hidden}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.reveal.vis{opacity:1;transform:none}
+.divider{height:1px;background:linear-gradient(to right,transparent,rgba(184,154,106,.25),transparent)}
+section{padding:11vh 6vw}
+.dark{background:var(--surface)}.darker{background:var(--surface2)}
+.light{background:var(--creme2);color:var(--ink)}
+.eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ouro);margin-bottom:1.3rem;display:block}
+.light .eyebrow{color:#8a7a5c}
+h2{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,3.3rem);font-weight:300;line-height:1.1;margin-bottom:1rem;max-width:820px}
+h2 em{font-style:italic;color:var(--ouro-l)}.light h2 em{color:var(--ouro-d)}
+.lead{font-size:14px;line-height:1.85;color:var(--muted);max-width:620px;margin-bottom:2.6rem}
+.light .lead{color:#3c372f}
+.sub{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ouro);margin:3rem 0 1.2rem}
+.light .sub{color:var(--ouro-d)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw;position:relative}
+.hero-top{display:flex;align-items:center;gap:1rem;margin-bottom:3.4rem;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ouro)}
+.hero-top span{width:1px;height:22px;background:rgba(184,154,106,.4)}
+.hero-name{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,9vw,6.4rem);line-height:.95;letter-spacing:-.01em;margin-bottom:1.4rem}
+.hero-name em{font-style:italic;color:var(--ouro-l)}
+.hero-line{width:60px;height:1px;background:var(--ouro);margin:0 auto 1.8rem}
+.hero-tag{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--ouro);margin-bottom:.8rem}
+.hero-period{font-family:var(--serif);font-size:clamp(1.4rem,3.2vw,2.2rem);font-weight:300;font-style:italic;color:var(--creme2)}
+.hero-period .num{color:var(--ouro-l)}
+.fade{opacity:0;transform:translateY(12px);animation:in 1.4s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes in{to{opacity:1;transform:none}}
+
+/* CONCEITO */
+.concept-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:start;max-width:1100px}
+.concept h1{font-family:var(--serif);font-size:clamp(2.4rem,5.6vw,4.4rem);font-weight:300;line-height:1.02;letter-spacing:-.02em;margin-bottom:1.6rem}
+.concept h1 em{font-style:italic;color:var(--ouro-d)}
+.meaning{border-left:2px solid var(--ouro-d);padding-left:1.6rem}
+.meaning h4{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ouro-d);margin-bottom:1rem;font-weight:500}
+.meaning p{font-family:var(--serif);font-size:1.22rem;line-height:1.55;color:#3c342a;margin-bottom:1rem}
+.meaning p em{color:var(--ouro-d)}
+.facts{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:-1rem}
+.facts span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(150,120,74,.4);color:#6b5a3c;padding:6px 10px}
+.goals{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,.1);border:1px solid rgba(0,0,0,.1);max-width:1100px;margin-top:3.4rem}
+.goal{background:var(--paper);padding:1.6rem 1.4rem}
+.goal .gi{font-family:var(--serif);font-style:italic;color:var(--ouro-d);font-size:1.5rem;margin-bottom:.4rem}
+.goal h4{font-family:var(--serif);font-size:1.3rem;font-weight:400;margin-bottom:.3rem}
+.goal p{font-size:12.5px;line-height:1.6;color:#6b6355}
+
+/* EXECUÇÃO */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1rem}
+.step{border:1px solid var(--div);padding:1.5rem 1.3rem;background:rgba(238,233,224,.02)}
+.step .sd{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--ouro-l);margin-bottom:.4rem}
+.step h4{font-family:var(--serif);font-size:1.3rem;font-weight:400;margin-bottom:.35rem}
+.step p{font-size:12px;line-height:1.6;color:var(--muted)}
+.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--div);border:1px solid var(--div)}
+.cap{background:var(--surface2);padding:1.4rem 1.3rem}
+.cap .cd{font-family:var(--serif);font-size:1.9rem;font-weight:300;color:var(--ouro-l);line-height:1}
+.cap .cw{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:.35rem 0 .6rem}
+.cap p{font-size:12.5px;line-height:1.55;color:var(--creme2)}
+
+/* PEÇAS */
+.pieces{display:flex;flex-direction:column;border-top:1px solid var(--div)}
+.piece{display:grid;grid-template-columns:110px 1fr 190px 24px;gap:1.2rem;align-items:center;padding:1.3rem .3rem;border-bottom:1px solid var(--div);cursor:pointer;background:none;border-left:0;border-right:0;border-top:0;color:inherit;font:inherit;text-align:left;width:100%;transition:background .25s}
+.piece:hover{background:rgba(238,233,224,.03)}
+.piece .pn{font-family:var(--serif);font-size:1.7rem;font-weight:300;color:rgba(184,154,106,.55)}
+.piece .pd{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ouro-l)}
+.piece .pd small{display:block;font-family:var(--sans);font-style:normal;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}
+.piece h4{font-family:var(--serif);font-size:1.4rem;font-weight:400;line-height:1.2}
+.piece p{font-size:12px;color:var(--muted);line-height:1.5;margin-top:.2rem}
+.piece .pw{font-size:10.5px;line-height:1.45;color:var(--creme2)}
+.piece .pw span{display:block;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro);margin-bottom:.2rem}
+.piece .pa{color:var(--ouro);font-size:1.1rem}
+
+/* CHECKLISTS */
+.scripts{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.script{background:var(--paper);border:1px solid rgba(0,0,0,.08);padding:1.5rem 1.4rem;display:flex;flex-direction:column;gap:.6rem;transition:opacity .3s}
+.script-h{display:flex;gap:.8rem;align-items:flex-start}
+.script-h input{appearance:none;-webkit-appearance:none;flex:0 0 17px;width:17px;height:17px;border:1px solid rgba(150,120,74,.7);border-radius:3px;margin-top:3px;cursor:pointer;position:relative;background:#fff}
+.script-h input:checked{background:var(--ouro-d);border-color:var(--ouro-d)}
+.script-h input:checked::after{content:'';position:absolute;left:5px;top:1px;width:4px;height:9px;border:solid #fff;border-width:0 1.6px 1.6px 0;transform:rotate(45deg)}
+.script .sdate{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ouro-d)}
+.script h5{font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--ink);line-height:1.2}
+.script .swhere{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#8a7a5c;margin-top:.15rem}
+.script .fala{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.55;color:#3c342a;border-left:2px solid var(--ouro-d);padding-left:1rem;white-space:pre-line}
+.script .acts{font-size:12px;line-height:1.6;color:#6b6355}
+.script.done{opacity:.55}
+.crew{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--div);border:1px solid var(--div)}
+.crew-col{background:var(--surface2);padding:1.9rem 1.7rem}
+.crew-col h3{font-family:var(--serif);font-size:1.7rem;font-weight:400;margin-bottom:.2rem}
+.crew-col .role{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro);margin-bottom:1.3rem}
+.cb{margin-bottom:1.5rem}.cb:last-child{margin-bottom:0}
+.cb-d{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ouro-l);margin-bottom:.4rem}
+.cb label{display:flex;gap:.7rem;align-items:flex-start;font-size:12.5px;line-height:1.55;color:var(--creme2);padding:.45rem 0;border-top:1px solid var(--div);cursor:pointer}
+.cb input{appearance:none;-webkit-appearance:none;flex:0 0 14px;width:14px;height:14px;border:1px solid rgba(184,154,106,.6);border-radius:2px;margin-top:3px;cursor:pointer;position:relative}
+.cb input:checked{background:var(--ouro);border-color:var(--ouro)}
+.cb input:checked::after{content:'';position:absolute;left:4px;top:1px;width:3px;height:7px;border:solid var(--surface2);border-width:0 1.5px 1.5px 0;transform:rotate(45deg)}
+.cb label:has(input:checked) span{color:var(--muted);text-decoration:line-through}
+.cb .star{color:#e7a39b}
+
+/* STORIES TIMELINE */
+.phase{margin-top:2.6rem}
+.phase-h{display:flex;align-items:baseline;gap:1rem;margin-bottom:1rem}
+.phase-h b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.7rem;color:var(--ouro-l)}
+.phase-h span{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.days{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--div);border:1px solid var(--div)}
+.day{background:var(--surface2);padding:1.3rem 1.2rem}
+.day .dl{font-family:var(--serif);font-size:1.6rem;font-weight:300;color:var(--ouro-l);line-height:1}
+.day .dt{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:.35rem 0 .2rem}
+.day .df{display:inline-block;font-size:8px;letter-spacing:.12em;text-transform:uppercase;background:#6f5a3a;color:var(--creme);padding:3px 7px;border-radius:2px;margin:.3rem 0 .4rem}
+.day ul{list-style:none}
+.day li{font-size:12px;line-height:1.55;color:var(--creme2);padding:.5rem 0 .5rem 1rem;border-top:1px solid var(--div);position:relative}
+.day li::before{content:"";position:absolute;left:0;top:1rem;width:.5rem;height:1px;background:var(--ouro)}
+.day li i{font-family:var(--serif);font-size:1.02rem;color:var(--ouro-l)}
+.fixed{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--div);border:1px solid var(--div);margin-bottom:3rem}
+.fixed div{background:var(--surface);padding:1.3rem 1.2rem}
+.fixed h4{font-family:var(--serif);font-size:1.25rem;font-weight:400;margin-bottom:.35rem;color:var(--creme)}
+.fixed p{font-size:12px;line-height:1.55;color:var(--muted)}
+.fixed .gi{font-family:var(--serif);font-style:italic;color:var(--ouro-l);font-size:1.1rem;margin-bottom:.2rem}
+
+/* COMBINADOS */
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,.1);border:1px solid rgba(0,0,0,.1);max-width:1100px}
+.rule{background:var(--paper);padding:1.6rem 1.4rem}
+.rule .gi{font-family:var(--serif);font-style:italic;color:var(--ouro-d);font-size:1.3rem;margin-bottom:.3rem}
+.rule h4{font-family:var(--serif);font-size:1.3rem;font-weight:400;margin-bottom:.4rem;color:var(--ink)}
+.rule p{font-size:12.5px;line-height:1.6;color:#6b6355}
+
+/* CLOSING */
+.closing{background:var(--surface2);min-height:70vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7rem 6vw}
+.closing .pre{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ouro);margin-bottom:1.8rem}
+.closing h2{font-size:clamp(2.6rem,7vw,5.2rem);max-width:none;line-height:1;margin-bottom:1.6rem}
+.closing p{font-family:var(--serif);font-size:clamp(1.2rem,2.6vw,1.7rem);font-weight:300;font-style:italic;color:var(--creme2);line-height:1.5;max-width:640px}
+.closing .sig{margin-top:2.2rem;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ouro)}
+footer{border-top:1px solid var(--div);padding:1.6rem 6vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}
+footer b{font-family:var(--serif);font-weight:400;font-size:1.1rem;color:var(--muted)}
+footer .copy{font-size:10px;color:rgba(238,233,224,.3);letter-spacing:.1em}
+
+/* NAV */
+.side-nav{position:fixed;right:1.6rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:1rem;z-index:500}
+.sn-dot{position:relative;width:8px;height:8px;border-radius:50%;border:1px solid rgba(184,154,106,.6);background:rgba(30,30,28,.4);cursor:pointer;transition:all .3s}
+.sn-dot.on{background:var(--ouro);border-color:var(--ouro);transform:scale(1.3)}
+.sn-dot::after{content:attr(data-label);position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--creme);background:rgba(20,19,17,.92);padding:5px 10px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s;border:1px solid rgba(184,154,106,.25)}
+.sn-dot:hover::after{opacity:1}
+
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(15,14,12,.88);backdrop-filter:blur(6px);z-index:10000;display:flex;align-items:center;justify-content:center;padding:4vh 4vw;opacity:0;pointer-events:none;transition:opacity .35s}
+.modal.open{opacity:1;pointer-events:auto}
+.modal-box{background:var(--surface2);border:1px solid var(--div);max-width:760px;width:100%;max-height:92vh;overflow-y:auto;position:relative;padding:2.6rem 2.4rem}
+.modal-close{position:sticky;top:0;float:right;width:32px;height:32px;border-radius:50%;background:rgba(238,233,224,.1);color:var(--creme);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;border:0;z-index:3;margin:-1rem -1rem 0 0}
+.m-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.9rem}
+.m-tag{font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border:1px solid rgba(184,154,106,.4);color:var(--ouro-l)}
+.m-tag.g{border-color:rgba(238,233,224,.2);color:var(--muted)}
+.m-block h3{font-family:var(--serif);font-size:1.9rem;font-weight:400;line-height:1.15;margin-bottom:.5rem}
+.m-obj{font-size:13px;line-height:1.7;color:var(--muted)}
+.m-meta{font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ouro);margin:1.5rem 0 .5rem}
+.m-val{font-size:13px;line-height:1.7;color:var(--creme2)}
+.m-val ol,.m-val ul{padding-left:1.1rem}
+.m-val li{margin-bottom:.45rem}
+.m-val li::marker{color:var(--ouro)}
+.m-val li b{font-weight:500;color:var(--ouro-l)}
+.m-fala{font-family:var(--serif);font-style:italic;font-size:1.12rem;line-height:1.6;color:var(--ouro-l);border-left:2px solid var(--ouro);padding:.2rem 0 .2rem 1.1rem;white-space:pre-line}
+.m-fala b{font-family:var(--sans);font-style:normal;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.m-cap{font-size:12.5px;line-height:1.8;color:var(--creme2);white-space:pre-line;background:rgba(238,233,224,.035);border-left:2px solid var(--ouro);padding:1rem 1.2rem}
+.m-cap .tg{color:var(--ouro-l)}
+.m-note{font-size:12px;line-height:1.6;color:#e7c9a3;background:rgba(184,154,106,.08);border:1px solid var(--div);padding:.9rem 1rem;margin-top:1.5rem}
+.copy-btn{margin-top:.6rem;background:none;border:1px solid rgba(184,154,106,.4);color:var(--ouro-l);font:inherit;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;cursor:pointer}
+
+@media(max-width:1000px){
+  .flow{grid-template-columns:repeat(2,1fr)}
+  .concept-grid{grid-template-columns:1fr;gap:2.4rem}
+  .scripts,.crew,.rules{grid-template-columns:1fr}
+  .days,.fixed{grid-template-columns:repeat(2,1fr)}
+  .piece{grid-template-columns:90px 1fr 20px}
+  .piece .pw{display:none}
+  .side-nav{display:none}
+}
+@media(max-width:640px){
+  section{padding:9vh 16px}.hero{padding:7vh 16px}
+  .goals,.flow,.caps,.days,.fixed{grid-template-columns:1fr}
+  .piece{grid-template-columns:80px 1fr 16px;gap:.8rem}
+  .piece .pn{display:none}
+  .modal{padding:0}.modal-box{max-height:100vh;height:100%;padding:2.2rem 1.2rem}
+  footer{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="side-nav">
+  <a class="sn-dot" data-target="conceito" data-label="A Casa e o público"></a>
+  <a class="sn-dot" data-target="execucao" data-label="Como vamos executar"></a>
+  <a class="sn-dot" data-target="serie" data-label="A série"></a>
+  <a class="sn-dot" data-target="stories" data-label="Stories"></a>
+  <a class="sn-dot" data-target="videos" data-label="Vídeos soltos"></a>
+  <a class="sn-dot" data-target="fotos" data-label="Fotos"></a>
+  <a class="sn-dot" data-target="combinados" data-label="Combinados"></a>
+</nav>
+
+<section class="hero">
+  <div class="hero-top fade">Parceria<span></span>Amanda × Casa Caçandoca</div>
+  <h1 class="hero-name fade" style="animation-delay:.3s">Viver a casa<br><em>por inteiro.</em></h1>
+  <div class="hero-line fade" style="animation-delay:.55s"></div>
+  <p class="hero-tag fade" style="animation-delay:.7s">Série “Diário de Caçandoca” · feed, stories e fotos</p>
+  <p class="hero-period fade" style="animation-delay:.85s">Praia da Caçandoca · <span class="num">Ubatuba</span>, SP</p>
+</section>
+
+<section class="light concept" id="conceito">
+  <span class="eyebrow reveal">Quem é a Casa Caçandoca</span>
+  <div class="concept-grid">
+    <div class="reveal">
+      <h1>Uma casa inteira<br>para quem <em>você ama.</em></h1>
+      <p class="lead">A Casa Caçandoca fica na encosta da Praia da Caçandoca, no sul de Ubatuba, entre a Mata Atlântica e o mar. São cinco suítes, cada uma com varanda, rede e vista para o mar, piscina com borda infinita, área gourmet com churrasqueira e uma mesa onde cabe todo mundo. Durante a estadia, a casa é só do grupo que está nela.</p>
+      <div class="facts"><span>5 suítes</span><span>até 10 pessoas</span><span>vista mar em todos os quartos</span><span>piscina infinita</span><span>casa exclusiva do grupo</span></div>
+    </div>
+    <div class="meaning reveal">
+      <h4>Para quem é esta campanha</h4>
+      <p>Para quem tem entre <em>25 e 45 anos</em> e quer viajar com quem ama: a família que quer todo mundo junto de novo, os amigos que tentam marcar essa viagem há anos.</p>
+      <p>Gente que não procura só um lugar para dormir. Procura um lugar onde a viagem acontece: o café que vira almoço, a tarde inteira na piscina, a conversa que vai até tarde na varanda.</p>
+      <p>Quem assistir à Amanda precisa pensar: <em>“eu quero viver isso com a minha família/amigos.”</em></p>
+    </div>
+  </div>
+  <div class="goals reveal">
+    <div class="goal"><div class="gi">01</div><h4>Despertar desejo</h4><p>Que quem assiste se imagine ali, com a própria família ou com os amigos.</p></div>
+    <div class="goal"><div class="gi">02</div><h4>Gerar curiosidade</h4><p>Que a pessoa queira ver mais, visitar o perfil da Casa e perguntar pelas datas.</p></div>
+    <div class="goal"><div class="gi">03</div><h4>Mostrar como é viver a casa</h4><p>A casa por completo, do primeiro café à última conversa da noite. Com gente de verdade, sem cenário montado.</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="dark" id="execucao">
+  <span class="eyebrow reveal">Como vamos executar</span>
+  <h2 class="reveal">Uma viagem contada<br><em>em capítulos.</em></h2>
+  <p class="lead reveal">Não são vídeos bonitos soltos. É uma série: quem acompanha a Amanda sabe, desde antes da viagem, para onde ela vai, com quem, por onde passa e onde está hospedada. A antecipação começa dias antes, a estrada vira capítulo e cada episódio deixa vontade de ver o próximo. No fim, ninguém tem dúvida de que aquela é uma casa onde dá para se hospedar, e a pessoa já viveu a viagem junto.</p>
+  <div class="flow reveal">
+    <div class="step"><div class="sd">5 a 1 dia antes</div><h4>Antecipação</h4><p>Pistas, a mala, quem vai e a contagem regressiva. O Ep. 00 abre a série no feed.</p></div>
+    <div class="step"><div class="sd">Dia 1</div><h4>A ida</h4><p>A estrada até Ubatuba, a serra, o mar aparecendo, o mercado, o portão. Stories ao vivo e o Ep. 01.</p></div>
+    <div class="step"><div class="sd">A estadia</div><h4>Viver a casa</h4><p>A chegada, um dia inteiro na casa e os cantinhos preferidos. Eps. 02, 03 e 04.</p></div>
+    <div class="step"><div class="sd">Depois</div><h4>A volta</h4><p>A despedida e o que fica da viagem. O Ep. 05 fecha a série com o convite.</p></div>
+  </div>
+  <div class="sub reveal">Entregas da Amanda</div>
+  <div class="caps reveal">
+    <div class="cap"><div class="cd">6 episódios</div><div class="cw">Feed · Reels em collab com a Casa</div><p>Do Ep. 00 (a mala) ao Ep. 05 (o que fica), um capítulo por momento da viagem.</p></div>
+    <div class="cap"><div class="cd">Stories</div><div class="cw">Antes, durante e depois</div><p>Antecipação com pistas e contagem regressiva, a ida ao vivo, o dia a dia na casa e a volta.</p></div>
+    <div class="cap"><div class="cd">14 vídeos + fotos</div><div class="cw">Material bruto</div><p>Os momentos da estadia que alimentam os episódios, os stories e o perfil da Casa.</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="darker" id="serie">
+  <span class="eyebrow reveal">A série · feed</span>
+  <h2 class="reveal">Diário de<br><em>Caçandoca.</em></h2>
+  <p class="lead reveal">Seis episódios em Reels, postados em sequência. Toque em cada um para ver as cenas, a fala da Amanda, o texto na tela e a legenda. As falas são um guia, não um texto para decorar.</p>
+  <div class="sub reveal">O que se repete em todo episódio</div>
+  <div class="fixed reveal">
+    <div><div class="gi">01</div><h4>A mesma abertura</h4><p>Nos primeiros segundos, a cartela “Diário de Caçandoca · Ep. 0X”, sempre com a mesma letra e no mesmo lugar da tela.</p></div>
+    <div><div class="gi">02</div><h4>Onde ela está</h4><p>A localização marcada e uma frase que situa: em casa fazendo a mala, na estrada, em Ubatuba, na casa onde está hospedada.</p></div>
+    <div><div class="gi">03</div><h4>É hospedagem</h4><p>Ela sempre fala da Casa como o lugar onde está hospedada com o grupo, nunca como “a minha casa”. Assim ninguém tem dúvida.</p></div>
+    <div><div class="gi">04</div><h4>Gancho para o próximo</h4><p>Todo episódio termina anunciando o próximo: “amanhã eu mostro por dentro”, “amanhã: um dia inteiro aqui”.</p></div>
+  </div>
+  <div class="pieces reveal" id="pieces"></div>
+</section>
+
+<div class="divider"></div>
+
+<section class="dark" id="stories">
+  <span class="eyebrow reveal">A série · stories</span>
+  <h2 class="reveal">Antes, durante<br>e <em>depois.</em></h2>
+  <p class="lead reveal">Os stories carregam a série entre um episódio e outro. Antes da viagem, criam a expectativa. Durante, mostram ao vivo onde ela está. Depois, mantêm a casa na cabeça de quem acompanhou. Os dias da estadia são uma sugestão: ajuste ao número de noites combinado.</p>
+  <div id="phases" class="reveal"></div>
+</section>
+
+<div class="divider"></div>
+
+<section class="light" id="videos">
+  <span class="eyebrow reveal">Checklist da Amanda · vídeos soltos</span>
+  <h2 class="reveal">Os momentos que<br>não podem <em>faltar.</em></h2>
+  <p class="lead reveal">Takes curtos, de 5 a 20 segundos. São a matéria-prima dos episódios 02 a 04, dos stories e do perfil da Casa. Siga a ordem do dia e marque cada item quando estiver gravado.</p>
+  <div id="videoGroups"></div>
+</section>
+
+<div class="divider"></div>
+
+<section class="dark" id="fotos">
+  <span class="eyebrow reveal">Checklist da Amanda · fotos</span>
+  <h2 class="reveal">A casa,<br>e a casa <em>vivida.</em></h2>
+  <p class="lead reveal">De um lado, a casa como ela é. Do outro, as pessoas dentro dela. As duas listas são importantes: a primeira mostra o lugar, a segunda faz a pessoa se imaginar ali.</p>
+  <div class="crew reveal" id="crew"></div>
+</section>
+
+<div class="divider"></div>
+
+<section class="light" id="combinados">
+  <span class="eyebrow reveal">Combinados</span>
+  <h2 class="reveal">Antes de<br>dar o <em>play.</em></h2>
+  <p class="lead reveal">Poucas regras, e todas a favor do conteúdo.</p>
+  <div class="rules reveal">
+    <div class="rule"><div class="gi">01</div><h4>Verdade primeiro</h4><p>Mostrar a casa como ela é. Nada de prometer o que ela não tem: a casa não é pé na areia, e a escada da encosta desce até as pedras, não até a praia. É a verdade que faz o “igual às fotos” funcionar.</p></div>
+    <div class="rule"><div class="gi">02</div><h4>Gente na cena</h4><p>Gravar com o grupo sempre que possível. Pedir autorização de imagem a todos e, para crianças, aos pais.</p></div>
+    <div class="rule"><div class="gi">03</div><h4>Luz e formato</h4><p>Vertical 9:16, na melhor qualidade do celular. Luz natural: manhã cedo e pôr do sol são os melhores horários. Gravar também o som do mar sozinho.</p></div>
+    <div class="rule"><div class="gi">04</div><h4>Respeito ao lugar</h4><p>A Caçandoca é território de comunidade quilombola. Não filmar nem fotografar moradores sem autorização.</p></div>
+    <div class="rule"><div class="gi">05</div><h4>Postar em sequência</h4><p>Um episódio por vez, sem pular a ordem. Os seis em collab com o perfil da Casa, com a localização marcada. Enviar todo o material bruto para a equipe de marketing da Casa até [data a combinar].</p></div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="pre reveal">Para a Amanda</div>
+  <h2 class="reveal">Use sua criatividade.<br><em>Abuse dela.</em></h2>
+  <p class="reveal">Este roteiro é o mapa, não a viagem. Se um momento bonito acontecer fora da lista, grave. É exatamente isso que a gente quer mostrar.</p>
+  <div class="sig reveal">— Casa Caçandoca</div>
+</section>
+
+<footer>
+  <b>Casa Caçandoca</b>
+  <div class="copy">Parceria Amanda · Roteiro de vídeos e fotos · 2026</div>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" aria-label="Fechar">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const PERFIL="@casacacandoca";
+const TAGS="#CasaCaçandoca #Ubatuba #PraiaDaCaçandoca #ViagemEmFamília #ViagemComAmigos";
+
+const REELS=[
+{fmt:"Reels · 15 a 25 s",tag:"Antecipação",ep:"Ep. 00",title:"A mala: vou levar vocês comigo",
+ when:"3 dias antes da viagem",
+ obj:"Avisar que vem uma viagem, com quem e para onde, e que os seguidores vão acompanhar tudo. Ainda sem mostrar a casa por dentro.",
+ scenes:[
+  "<b>Abertura.</b> A Amanda em casa, com a mala aberta na cama, olhando para a câmera.",
+  "<b>Pistas.</b> Cortes rápidos: o grupo da viagem no celular, o mapa com Ubatuba marcada, roupa de banho entrando na mala.",
+  "<b>Uma imagem só da Casa.</b> Um detalhe ou um plano de longe, como a rede com o mar desfocado ou a casa na encosta. Só o bastante para dar curiosidade.",
+  "<b>Cartela final.</b> “Diário de Caçandoca · começa [dia]”."
+ ],
+ fala:`Daqui a três dias eu vou passar uns dias numa casa no meio da Mata Atlântica, de frente pro mar, com [a minha família / os meus amigos].
+
+A gente vai se hospedar lá, e eu vou levar vocês comigo. Do caminho até a última noite.`,
+ screen:"“Diário de Caçandoca” → “Ep. 00 · a mala” → “Começa [dia]”",
+ audio:"Música leve, com ritmo de viagem. Som real do zíper da mala no fim.",
+ caption:`Faz tempo que a gente tenta marcar essa viagem. Agora vai. 🌊
+
+Em três dias eu vou pra Praia da Caçandoca, em Ubatuba, passar uns dias com [a minha família / os meus amigos] na ${PERFIL}: uma casa inteira só pra gente, no meio da Mata Atlântica, de frente pro mar.
+
+E vocês vão junto. Vou contar tudo em capítulos, do caminho até a última noite.
+
+Ativa as notificações pra não perder o Ep. 01. 🔔`,
+ note:"Por que funciona: desde o primeiro vídeo a pessoa entende que é uma viagem, que a casa é uma hospedagem e que tem continuação. Não mostre a casa por dentro aqui: a vontade de ver é o que traz a pessoa de volta."},
+
+{fmt:"Reels · vlog 40 a 60 s",tag:"O caminho",ep:"Ep. 01",title:"A ida: daqui até a Caçandoca",
+ when:"Dia 1 · gravado na estrada, postado à noite",
+ obj:"Mostrar o caminho até a Casa: de onde ela sai, por onde passa e onde chega. Situar quem assiste no sul de Ubatuba e fazer da estrada parte da viagem.",
+ scenes:[
+  "<b>A saída.</b> O porta-malas fechando, o grupo entrando no carro, alguém dizendo “partiu”.",
+  "<b>A estrada.</b> O café na parada, a janela, a música no carro, alguém cochilando.",
+  "<b>O mar aparece.</b> A primeira vista do mar na descida, e a reação do grupo.",
+  "<b>Chegando em Ubatuba.</b> A placa ou a entrada da cidade.",
+  "<b>Parada no mercado.</b> As compras para a estadia: é casa, o grupo faz o próprio ritmo.",
+  "<b>O último quilômetro.</b> A estrada de terra, com bom humor.",
+  "<b>O portão.</b> A casa vista de fora. O vídeo corta antes de mostrar o lado de dentro."
+ ],
+ fala:`<b>Saída:</b> Ep. 01: a ida. A gente saiu de [cidade] às [hora].
+
+<b>O mar:</b> Olha isso, gente.
+
+<b>Ubatuba:</b> Chegamos em Ubatuba. Agora é o sul da cidade, a Praia da Caçandoca.
+
+<b>Mercado:</b> Parada pras compras, porque é casa: aqui quem faz o horário é a gente.
+
+<b>Estrada de terra:</b> O último quilômetro é de terra. Faz parte.
+
+<b>Portão:</b> Chegamos. Amanhã eu mostro se ela é igual às fotos.`,
+ screen:"“Diário de Caçandoca · Ep. 01 · a ida” → “[cidade] → Caçandoca, Ubatuba” → horário e quilometragem em alguns cortes → “Amanhã: será que é igual às fotos?”",
+ audio:"Música de estrada, com os sons reais por cima: a porta do carro batendo, o cascalho na estrada de terra, o portão abrindo.",
+ caption:`Ep. 01: a ida. 🚗
+
+Saímos de [cidade] cedo, pegamos a estrada e, quando o mar apareceu, o carro inteiro ficou em silêncio.
+
+Destino: Praia da Caçandoca, no sul de Ubatuba. Parada no mercado (é casa, quem faz o horário é a gente), um quilômetro de estrada de terra e... chegamos na ${PERFIL}.
+
+Amanhã eu mostro por dentro. Será que é igual às fotos? 👀`,
+ note:"Antes de narrar, confirme com a Casa o trajeto real até a Caçandoca: não citar estrada nem tempo de viagem que não sejam os verdadeiros. Quem estiver dirigindo não grava."},
+
+{fmt:"Reels · 30 a 45 s",tag:"A chegada",ep:"Ep. 02",title:"Será que a casa é igual às fotos?",
+ when:"Dia 1 · gravado na chegada, postado no Dia 2",
+ obj:"Usar a dúvida que todo mundo tem antes de reservar como gancho, e responder mostrando a casa real.",
+ scenes:[
+  "<b>Gancho (0–3 s).</b> A Amanda no portão, olhando para a câmera, com o celular mostrando uma foto da casa no Instagram.",
+  "<b>A porta abre.</b> Câmera por cima do ombro dela: a primeira vista da sala e do mar. Reação real, sem ensaio.",
+  "<b>Foto × realidade.</b> Ela coloca o celular com a foto na frente da câmera e abaixa, revelando o mesmo ambiente ao vivo, no mesmo enquadramento. Um corte por ambiente: a piscina infinita, a suíte com vista, a rede na varanda, a área gourmet.",
+  "<b>O que a foto não mostra.</b> Planos que nenhuma foto carrega: o som do mar, o verde se mexendo com o vento, o grupo pulando na piscina, alguém rindo à mesa.",
+  "<b>Veredito.</b> A Amanda na rede ou na borda da piscina, com o mar atrás, dando a resposta final."
+ ],
+ fala:`<b>Gancho:</b> Ep. 02. Será que essa casa é igual às fotos? Eu vim conferir.
+
+<b>Na sequência:</b> A piscina... confere. O quarto com vista pro mar... confere. A rede na varanda... confere.
+
+<b>Veredito:</b> Igual às fotos? Não. A foto não mostra o barulho do mar de manhã, nem a sensação de ter todo mundo junto aqui. Isso só vivendo.
+
+<b>Gancho:</b> Amanhã eu mostro como é passar um dia inteiro aqui.`,
+ screen:"“Diário de Caçandoca · Ep. 02” → “Será que é igual às fotos?” → selos “foto” e “real” lado a lado em cada ambiente → “O que a foto não mostra:” → “Amanhã: um dia inteiro aqui”",
+ audio:"Áudio em alta, com batida marcada para os cortes foto × realidade. A voz da Amanda por cima, e o som ambiente do mar no veredito.",
+ caption:`Ep. 02: será que é igual às fotos?
+
+Toda vez que eu vejo uma casa linda na internet, fico com essa dúvida. Então, chegando na ${PERFIL}, fui conferir.
+
+A piscina, as suítes com vista pro mar, a rede na varanda: está tudo lá. Mas tem coisa que a foto não mostra. O som do mar de manhã, o verde em volta e a casa inteira só para o nosso grupo.
+
+Amanhã: um dia inteiro aqui. 🌿`,
+ note:"Por que funciona: a pergunta do gancho é a mesma que o público faz antes de reservar. A estrada de terra já apareceu no Ep. 01, então este episódio chega com a credibilidade de quem mostrou o caminho inteiro."},
+
+{fmt:"Reels · vlog 45 a 60 s",tag:"Viver a casa",ep:"Ep. 03",title:"Um dia inteiro aqui",
+ when:"Dia 2 · gravado ao longo do dia, postado à noite ou no dia seguinte",
+ obj:"Mostrar como é viver a casa, do primeiro café à última conversa. É o episódio que faz a pessoa se imaginar ali com a família ou com os amigos.",
+ scenes:[
+  "<b>Bom dia.</b> A Amanda acordando, abrindo a janela da suíte para o mar.",
+  "<b>Café na varanda.</b> A mesa posta e o grupo chegando aos poucos.",
+  "<b>Manhã na piscina.</b> O primeiro mergulho, a piscina com o mar no fundo.",
+  "<b>Almoço.</b> O churrasco, os pratos passando, o brinde.",
+  "<b>Tarde.</b> A rede, alguém lendo, a partida de bilhar.",
+  "<b>Pôr do sol.</b> Todo mundo na varanda olhando o mar.",
+  "<b>Noite.</b> O jantar na mesa grande, a conversa, as luzes da casa."
+ ],
+ fala:`<b>Bom dia:</b> Ep. 03: um dia inteiro aqui. Acordei com esse barulho. [o mar]
+
+<b>Ao longo do dia (frases curtas):</b> Café com essa vista. / Primeiro mergulho do dia. / O churrasco ficou com a turma. / Hora da revanche no bilhar.
+
+<b>Pôr do sol:</b> E é aqui que todo mundo para.
+
+<b>Noite:</b> O programa do dia foi a casa. E foi o suficiente.
+
+<b>Gancho:</b> Amanhã eu mostro os meus cantinhos preferidos.`,
+ screen:"“Diário de Caçandoca · Ep. 03” → o horário em cada cena (“7h · 9h · 11h · 13h · 16h · 18h · 21h”) → “Amanhã: meus cantinhos preferidos”",
+ audio:"Música leve que acompanha o dia, baixando em alguns momentos para entrar o som real: o mar, o mergulho, as risadas, os talheres.",
+ caption:`Ep. 03: um dia inteiro aqui. ☀️
+
+Acordar com o barulho do mar, tomar café na varanda, passar a manhã na piscina, almoçar todo mundo junto e terminar o dia olhando o pôr do sol.
+
+O programa do dia foi a ${PERFIL}. E foi o suficiente.
+
+Como seria o seu dia aqui? Me conta. 👇`,
+ note:"Os vídeos soltos da seção seguinte são a matéria-prima deste episódio. Os horários na tela são o que dá a sensação de um dia inteiro: grave anotando a hora real de cada cena."},
+
+{fmt:"Reels · 45 a 60 s",tag:"Comercial, sem parecer venda",ep:"Ep. 04",title:"Os meus cantinhos preferidos",
+ when:"Gravado ao longo da estadia, postado no último dia",
+ obj:"Mostrar a casa por completo pelo olhar dela. A Amanda não lista estrutura: conta por que gostou de cada lugar e o que viveu ali.",
+ scenes:[
+  "<b>Abertura.</b> A Amanda andando de costas pela varanda, falando com a câmera e chamando para o tour.",
+  "<b>01 · A rede da suíte.</b> Ela deita, a câmera mostra a vista a partir dos pés dela. Luz da manhã.",
+  "<b>02 · A piscina infinita.</b> Sentada na borda, com os pés na água e o mar ao fundo. Um plano largo e um detalhe da água.",
+  "<b>03 · A área gourmet.</b> O grupo em volta da churrasqueira, alguém servindo, um brinde.",
+  "<b>04 · A mesa grande.</b> Todo mundo sentado, pratos passando de mão em mão, conversa.",
+  "<b>05 · O pôr do sol na varanda.</b> Ela fica em silêncio por dois segundos. Só o mar e a luz.",
+  "<b>Fecho.</b> A Amanda olha para a câmera e anuncia o último episódio."
+ ],
+ fala:`<b>Abertura:</b> Ep. 04. Antes de ir embora, vem conhecer comigo os meus cantinhos preferidos da casa.
+
+<b>01:</b> Primeiro, a rede da varanda. Toda suíte tem uma, e todas olham pro mar. Eu acordei e vim direto pra cá.
+
+<b>02:</b> Essa piscina. Parece que ela termina no mar. Não tem como sair daqui.
+
+<b>03:</b> A área do churrasco. Aqui ninguém fica sozinho na cozinha: é onde todo mundo se junta.
+
+<b>04:</b> Essa mesa. Café da manhã que vira almoço, almoço que vira conversa.
+
+<b>05:</b> E o último é esse aqui. [pausa, só o mar] Acho que não precisa explicar.
+
+<b>Fecho:</b> Amanhã a gente volta pra casa. E eu conto o que fica.`,
+ screen:"“Diário de Caçandoca · Ep. 04” → “01 · a rede”, “02 · a piscina”, “03 · o churrasco”, “04 · a mesa”, “05 · o pôr do sol”",
+ audio:"Música leve e solar, em volume baixo. A voz da Amanda conduz. No cantinho 05, a música baixa e entra só o som do mar.",
+ caption:`Ep. 04: se eu tivesse que escolher um cantinho só da ${PERFIL}, não ia conseguir. Então trouxe cinco. 🤍
+
+A rede da varanda (toda suíte tem a sua, com vista pro mar), a piscina que parece terminar no oceano, o churrasco com todo mundo junto, a mesa onde o café vira almoço e aquele fim de tarde que dispensa legenda.
+
+Qual desses seria o seu? Me conta aqui. 👇`,
+ note:"Para não parecer venda: cada cantinho vem com um motivo pessoal ou um momento vivido, nunca com uma lista de itens."},
+
+{fmt:"Reels · 30 a 45 s",tag:"Fechamento e convite",ep:"Ep. 05",title:"O que fica",
+ when:"Gravado no último dia, postado depois da volta",
+ obj:"Fechar a série com afeto, mostrar o que a viagem deixou no grupo e fazer o único convite direto: essa casa existe e qualquer um pode viver o mesmo.",
+ scenes:[
+  "<b>A mala de novo.</b> O mesmo enquadramento do Ep. 00, agora fechando a mala na suíte, com o mar na janela.",
+  "<b>O último café.</b> O grupo na varanda, mais quieto.",
+  "<b>A foto do grupo.</b> Todo mundo junto na varanda, com o mar atrás.",
+  "<b>A saída.</b> O portão fechando e a casa ficando para trás pelo vidro do carro.",
+  "<b>De volta.</b> A Amanda em casa, olhando uma foto da viagem no celular."
+ ],
+ fala:`<b>Mala:</b> Ep. 05: o que fica.
+
+<b>De volta:</b> A gente foi pra descansar e voltou com [o que o grupo viveu de verdade: a conversa que não acontecia há anos, as risadas da noite do bilhar...].
+
+<b>Convite:</b> Se você também tem [uma família / uma turma] que vive adiando essa viagem, a casa é a Casa Caçandoca, na Praia da Caçandoca, em Ubatuba. Marca quem você levaria.`,
+ screen:"“Diário de Caçandoca · Ep. 05 · o que fica” → “Casa Caçandoca · Ubatuba” → “Fim.”",
+ audio:"A mesma música do Ep. 00, para fechar o ciclo. Som do portão e do carro na saída.",
+ caption:`Ep. 05: o que fica. 🤍
+
+A gente foi pra Caçandoca pra descansar e voltou com [o que o grupo viveu de verdade].
+
+Obrigada a quem acompanhou o Diário de Caçandoca do começo ao fim. E se você também tem [uma família / uma turma] que vive adiando essa viagem, a casa é a ${PERFIL}, na Praia da Caçandoca, em Ubatuba.
+
+Marca aqui quem você levaria. 👇`,
+ note:"É o único episódio com convite direto, e ele vem no fim, depois que a pessoa já viveu a viagem junto. A frase entre colchetes precisa ser verdadeira: é o que a Amanda sentiu, não o que a Casa gostaria que ela dissesse."}
+];
+
+const PHASES=[
+ {h:"Antes",s:"Antecipação · 5 a 1 dia antes",days:[
+  {l:"D-5",t:"As pistas",i:["Foto de um detalhe da Casa (a rede, a madeira, o mar desfocado) com a caixinha <i>“Adivinha pra onde eu vou?”</i>","Enquete: <i>“Viagem boa é com: família ou amigos?”</i>"]},
+  {l:"D-3",t:"Começa a série",f:"Feed · Ep. 00",i:["Repost do Ep. 00","Figurinha de contagem regressiva <i>“Diário de Caçandoca”</i> com lembrete","<i>“Vou levar vocês comigo. Ativa o lembrete aí.”</i>"]},
+  {l:"D-2",t:"Quem vai",i:["Um story para cada pessoa do grupo, com uma frase sobre ela","Enquete <i>“Qual suíte você escolheria?”</i> com duas fotos de suítes cedidas pela Casa"]},
+  {l:"D-1",t:"A mala pronta",i:["A mala fechada na porta","O mapa com a rota <i>[cidade] → Caçandoca, Ubatuba</i>","Caixinha <i>“O que vocês querem ver lá?”</i>: as respostas viram pauta dos stories e do Ep. 03"]}
+ ]},
+ {h:"Durante",s:"Ao vivo, de onde ela está",days:[
+  {l:"Dia 1",t:"A ida",f:"Feed · Ep. 01 à noite",i:["A saída, a parada para o café, a estrada","A primeira vista do mar e a placa de Ubatuba","O mercado e a estrada de terra","O último story mostra só o portão: <i>“Chegamos. Amanhã eu mostro tudo.”</i>"]},
+  {l:"Dia 2",t:"Viver a casa",f:"Feed · Ep. 02",i:["<i>“Bom dia de Caçandoca”</i>, sempre no mesmo enquadramento (a rede com o mar)","Repost do Ep. 02","Momentos do dia: café, piscina, churrasco","Enquete: <i>“Piscina ou rede?”</i>","<i>“Boa noite de Caçandoca”</i> na varanda"]},
+  {l:"Dia 3",t:"Um dia inteiro",f:"Feed · Ep. 03",i:["<i>“Bom dia de Caçandoca”</i>","Repost do Ep. 03","A Amanda responde as perguntas da caixinha do D-1, da varanda"]},
+  {l:"Último dia",t:"A despedida",f:"Feed · Ep. 04",i:["Repost do Ep. 04","A mala, o último café, a foto do grupo","<i>“Ainda nem fui embora e já estou com saudade.”</i>"]}
+ ]},
+ {h:"Depois",s:"A casa continua na cabeça",days:[
+  {l:"+1 dia",t:"A saudade",i:["Uma foto da viagem com <i>“já tô com saudade”</i>","Caixinha <i>“Perguntem o que quiserem da casa”</i>"]},
+  {l:"+2 dias",t:"As respostas",i:["Respostas da caixinha, com sinceridade: o que ela amou e o que é bom saber antes de ir"]},
+  {l:"+3 dias",t:"O fim da série",f:"Feed · Ep. 05",i:["Repost do Ep. 05","<i>“Pra quem perguntou: a casa é a [perfil da Casa]”</i>, com a marcação"]},
+  {l:"Destaque",t:"Diário de Caçandoca",i:["Todos os stories da série num destaque fixo no perfil da Amanda, na ordem da viagem"]}
+ ]}
+];
+
+const VIDEOS=[
+ {g:"Chegada",items:[
+  {t:"A porta abrindo",w:"POV da Amanda · sem fala",a:"Câmera na mão, ela abre a porta e entra. Gravar a primeira reação de verdade, sem repetir. Se a reação for boa, ela já é o conteúdo."},
+  {t:"Abri a janela e...",w:"Suíte · com fala",f:"Gente, olha o que eu vou ver quando acordar."},
+  {t:"A disputa pelos quartos",w:"Com o grupo · com fala",f:"Cinco suítes, todas com vista pro mar, e mesmo assim já tem gente brigando pela master."}
+ ]},
+ {g:"Manhã",items:[
+  {t:"Café na varanda",w:"Plano aberto · sem fala",a:"Mesa posta com o mar ao fundo, alguém servindo café. Só som ambiente."},
+  {t:"Som de manhã",w:"Câmera fixa · 10 s · sem fala",a:"A rede balançando, os passarinhos, o mar. Para stories com o texto “bom dia de Caçandoca”."},
+  {t:"O primeiro mergulho",w:"Câmera fixa na borda",a:"A piscina parada e alguém do grupo mergulhando. A água se mexe com o mar ao fundo."}
+ ]},
+ {g:"Tarde",items:[
+  {t:"O churrasco",w:"Detalhes + grupo",a:"Mãos no preparo, a carne na grelha, o grupo rindo, o brinde. Cortes rápidos."},
+  {t:"A partida de bilhar",w:"Com o grupo · com fala",f:"Final do campeonato da casa. Quem perder lava a louça."},
+  {t:"Um dia na Casa Caçandoca em 15 segundos",w:"Montagem · cortes rápidos",a:"Um plano de 1 segundo de cada momento do dia, do café ao jantar. Funciona como Reels extra."},
+  {t:"A escada até o mar",w:"Trilha privativa · com cuidado",a:"Descendo a escada da encosta, entre o verde, até as pedras. Mostrar como um passeio, sem sugerir que ela leva à areia. Só com calçado adequado."}
+ ]},
+ {g:"Noite",items:[
+  {t:"A casa acendendo",w:"Time-lapse · celular apoiado",a:"Do pôr do sol até as luzes da casa acenderem. Celular fixo na varanda, por uns 20 minutos."},
+  {t:"Jantar na mesa grande",w:"Plano aberto · som ambiente",a:"Todo mundo à mesa, a conversa e as risadas. A câmera passeia devagar ao redor."},
+  {t:"A Amanda responde",w:"Stories · caixinha de perguntas",f:"Vocês perguntaram, eu respondo daqui da varanda. [responder 3 a 5 perguntas reais dos seguidores sobre a casa]"}
+ ]},
+ {g:"Despedida",items:[
+  {t:"O último olhar",w:"Malas na porta · com fala",f:"Ainda nem fui embora e já estou com saudade."}
+ ]}
+];
+
+const CREW=[
+ {h:"A casa",role:"Ambientes e detalhes · de preferência sem pessoas",b:[
+  {d:"Ambientes",i:["A casa inteira na encosta, com o mar e a mata","A piscina infinita com o mar no fundo","Cada uma das cinco suítes, com a janela aberta","A rede na varanda, com a vista","A área gourmet com a churrasqueira","A sala e a mesa de jantar","O bilhar e a pérgola","Os jardins"]},
+  {d:"Detalhes",i:["Luz da manhã entrando no quarto","A mesa de café posta","Um copo na borda da piscina","Toalha jogada na rede","Pés na rede, com o mar","A madeira, as texturas e os acabamentos","A casa iluminada à noite"]}
+ ]},
+ {h:"A casa vivida",role:"Gente de verdade dentro da casa",b:[
+  {d:"A Amanda",i:["Na rede, olhando o mar","De costas na borda da piscina","Rindo à mesa, com o grupo","Na varanda, no pôr do sol","Com o café na mão, na varanda"]},
+  {d:"O grupo",i:["Todos juntos à mesa","O brinde","Todo mundo na piscina","Em volta da churrasqueira","Conversa na varanda, à noite","<span class='star'>★</span> Foto oficial do grupo na varanda, com o mar atrás, para o perfil da Casa"]}
+ ]}
+];
+
+/* ============ RENDER ============ */
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const rich=s=>esc(s).replace(/&lt;b&gt;/g,"<b>").replace(/&lt;\/b&gt;/g,"</b>");
+
+document.getElementById('pieces').innerHTML=REELS.map((r,i)=>`
+ <button class="piece" data-reel="${i}">
+  <span class="pd">${r.ep}<small>${esc(r.tag)}</small></span>
+  <span><h4>${esc(r.title)}</h4><p>${esc(r.obj)}</p></span>
+  <span class="pw"><span>Quando</span>${esc(r.when)}</span>
+  <span class="pa">›</span>
+ </button>`).join('');
+
+document.getElementById('phases').innerHTML=PHASES.map(ph=>`<div class="phase"><div class="phase-h"><b>${ph.h}</b><span>${ph.s}</span></div><div class="days">${ph.days.map(d=>`<div class="day"><div class="dl">${d.l}</div><div class="dt">${d.t}</div>${d.f?`<span class="df">${d.f}</span>`:''}<ul>${d.i.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('')}</div></div>`).join('');
+
+const KEY='cacandoca-amanda-v1'; let saved={};
+try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){saved={};}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}};
+
+let n=0;
+document.getElementById('videoGroups').innerHTML=VIDEOS.map((g,gi)=>`<div class="sub reveal">${g.g}</div><div class="scripts reveal">${g.items.map((s,ii)=>{n++;const k=`v${gi}-${ii}`;return `<div class="script${saved[k]?' done':''}"><div class="script-h"><input type="checkbox" data-k="${k}" ${saved[k]?'checked':''} aria-label="Gravado"><div><div class="sdate">${String(n).padStart(2,'0')}</div><h5>${esc(s.t)}</h5><div class="swhere">${esc(s.w)}</div></div></div>${s.f?`<div class="fala">“${esc(s.f)}”</div>`:`<div class="acts">${esc(s.a)}</div>`}</div>`}).join('')}</div>`).join('');
+
+document.getElementById('crew').innerHTML=CREW.map((c,ci)=>`<div class="crew-col"><h3>${c.h}</h3><div class="role">${c.role}</div>${c.b.map((b,bi)=>`<div class="cb"><div class="cb-d">${b.d}</div>${b.i.map((x,ii)=>{const k=`f${ci}-${bi}-${ii}`;return `<label><input type="checkbox" data-k="${k}" ${saved[k]?'checked':''}><span>${x}</span></label>`}).join('')}</div>`).join('')}</div>`).join('');
+
+document.addEventListener('change',e=>{const k=e.target.dataset&&e.target.dataset.k;if(!k)return;saved[k]=e.target.checked;save();const card=e.target.closest('.script');if(card)card.classList.toggle('done',e.target.checked);});
+
+const modal=document.getElementById('modal'),body=document.getElementById('modalBody');
+function openReel(i){
+  const r=REELS[i];
+  body.innerHTML=`<div class="m-block"><div class="m-tags"><span class="m-tag">Diário de Caçandoca · ${r.ep}</span><span class="m-tag g">${esc(r.fmt)}</span><span class="m-tag g">${esc(r.tag)}</span></div>
+  <h3>${esc(r.title)}</h3><p class="m-obj">${esc(r.obj)}</p>
+  <div class="m-meta">Quando gravar e postar</div><div class="m-val">${esc(r.when)}</div>
+  <div class="m-meta">Cenas</div><div class="m-val"><ol>${r.scenes.map(s=>`<li>${rich(s)}</li>`).join('')}</ol></div>
+  <div class="m-meta">Fala da Amanda (guia)</div><div class="m-fala">${rich(r.fala)}</div>
+  <div class="m-meta">Texto na tela</div><div class="m-val">${esc(r.screen)}</div>
+  <div class="m-meta">Áudio</div><div class="m-val">${esc(r.audio)}</div>
+  <div class="m-meta">Legenda</div><div class="m-cap" id="cap">${esc(r.caption)}\n\n<span class="tg">${TAGS}</span></div>
+  <button class="copy-btn" id="copyCap">Copiar legenda</button>
+  <div class="m-note">${esc(r.note)}</div></div>`;
+  document.getElementById('copyCap').onclick=async e=>{try{await navigator.clipboard.writeText(r.caption+"\n\n"+TAGS);e.target.textContent="Legenda copiada";}catch(err){e.target.textContent="Selecione o texto para copiar";}};
+  modal.querySelector('.modal-box').scrollTop=0;
+  modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+}
+function closeM(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+document.addEventListener('click',e=>{const p=e.target.closest('[data-reel]');if(p)openReel(+p.dataset.reel);});
+document.getElementById('modalClose').onclick=closeM;
+modal.addEventListener('click',e=>{if(e.target===modal)closeM();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM();});
+
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('vis');io.unobserve(en.target);}}),{threshold:.04});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('vis')),2500);
+const dots=[...document.querySelectorAll('.sn-dot')];
+dots.forEach(d=>d.addEventListener('click',()=>document.getElementById(d.dataset.target).scrollIntoView({behavior:'smooth'})));
+const sio=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)dots.forEach(d=>d.classList.toggle('on',d.dataset.target===en.target.id));}),{rootMargin:'-45% 0px -50% 0px'});
+dots.forEach(d=>sio.observe(document.getElementById(d.dataset.target)));
+</script>
+</body>
+</html>
